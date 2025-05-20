@@ -2,6 +2,7 @@
 A practice project to build a stock analyst agent using [langgraph](https://www.langchain.com/langgraph). 
 The agent uses ReAct architecture, which revolves around iterative cycles of thought, action, and observation.
 Its workflow graph as follows:
+
 <img src="workflow_graph.png" alt="Workflow Graph" width="200" height="200">
 
 ## Dependency Management
