@@ -1,0 +1,17 @@
+langgraph
+langchain
+langchain_openai
+langchain-community
+langchain-google-genai
+langchain_huggingface
+ollama
+pandas
+datetime
+ipython
+python-dotenv
+matplotlib
+sec_edgar_downloader
+beautifulsoup4
+chromadb
+fuzzywuzzy
+protobuf==3.20.3
