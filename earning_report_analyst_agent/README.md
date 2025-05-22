@@ -5,7 +5,7 @@ then passes the queried results to LLM in the format of context appended to the 
 
 Its workflow is as follows,
 
-<img src="ER_analyst_workflow.png" alt="Workflow Graph" width="300" height="200">
+<img src="ER_Analyst_workflow.png" alt="Workflow Graph" width="300" height="200">
 
 ## Dependency Management
 Use [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) to manage the environment and 3rd party libraries.
