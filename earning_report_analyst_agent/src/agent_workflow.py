@@ -43,7 +43,7 @@ class ERAgentWorkflow:
         return response.content
 
     def pipeline(self,ticker: str, queries: List[str]) -> List[str]:
-        downloader = SecDownloader("Individual Researcher", "fyin2012@gmail.com", "sec_filings")
+        downloader = SecDownloader("Individual Researcher", "user@gmail.com", "sec_filings")
         file_path = downloader.download_recent_earning_report(ticker=ticker, form_type="10-Q", max_filings=1)
         if file_path is None:
             raise ValueError(f"No 10-Q filings found for {ticker}.")

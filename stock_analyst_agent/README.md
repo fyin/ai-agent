@@ -1,9 +1,12 @@
-# ai-agent
-A practice project to build a stock analyst agent using [langgraph](https://www.langchain.com/langgraph). 
+# Stock Analyst Agent
+A practice project to build a stock analyst agent using [langgraph](https://www.langchain.com/langgraph), which can be used to get a stock summary according to its key valuation measures and financial news.
 The agent uses ReAct architecture, which revolves around iterative cycles of thought, action, and observation.
-Its workflow graph as follows:
+It first uses the available tools "get_valuation_measures" and "YahooFinanceNewsTool" to get stock's current key valuation measures and financial news, respectively.
+Then, it generates a clear stock summary using the user's chosen LLM model.
 
-<img src="workflow_graph.png" alt="Workflow Graph" width="200" height="200">
+Its workflow is as follows:
+
+<img src="stock_analyst_agent_workflow.png" alt="Workflow Graph" width="300" height="300">
 
 ## Dependency Management
 Use [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) to manage the environment and 3rd party libraries.
@@ -66,6 +69,6 @@ Recent financial news highlights positive developments, including strong Q1 reve
 ```
 
 ## References:
-https://python.langchain.com/docs
-https://github.com/langchain-ai/langchain-academy
-https://langchain-ai.github.io/langgraph/
+* https://python.langchain.com/docs
+* https://github.com/langchain-ai/langchain-academy
+* https://langchain-ai.github.io/langgraph/

@@ -16,3 +16,6 @@ lib64/
 parts/
 sdist/
 var/
+*/log/
+*/chromadb/
+*/sec_filings/

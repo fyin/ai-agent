@@ -53,6 +53,8 @@ class ChromaDB:
             text (str): Text to process (e.g., earnings report).
             collection_name (str): Name of the Chroma collection.
             persist_dir (str): Directory for persistent storage.
+            chunk_size (int, optional): Chunk size for text splitting. Defaults to 5000.
+            chunk_overlap (int, optional): Chunk overlap for text splitting. Defaults to 200.
 
         Returns:
             Chroma: Chroma vector store object or None if failed.
@@ -71,7 +73,7 @@ class ChromaDB:
                     unique_splits.append(split)
                     seen.add(split)
 
-            embedding_model = HuggingFaceEmbeddings()
+            embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5", model_kwargs={'device': 'cpu'})
             # Create Chroma vector store with persistence
             vectorstore = Chroma.from_texts(
                 texts=unique_splits,
@@ -99,9 +101,10 @@ class ChromaDB:
             list: List of relevant document chunks.
         """
         try:
-            results = vectorstore.similarity_search(query, k=k)
+            retriever = vectorstore.as_retriever()
+            results = retriever.invoke(query)
             for i, doc in enumerate(results, 1):
-                logger.info(f"Result {i}: {doc.page_content[:2000]}...")
+                logger.debug(f"Result {i}: {doc.page_content[:2000]}...")
             return results
 
         except Exception as e:

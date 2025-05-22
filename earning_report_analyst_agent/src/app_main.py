@@ -21,9 +21,7 @@ def main(ticker: str, queries: List[str]) -> List[str]:
 
 if __name__ == '__main__':
     ticker = "AAPL"
-    queries = [
-        f"What are the key financial highlights for {ticker} in the report?"
-    ]
+    queries = [f"What are the key financial highlights for {ticker} in the report?"]
     llm_responses = main(ticker, queries)
     for response in llm_responses:
         print(response)
