@@ -53,5 +53,5 @@ class SecDownloader:
             return None
 
 if __name__ == '__main__':
-    downloader = SecDownloader("Individual Researcher", "fyin2012@gmail.com", "sec_filings")
+    downloader = SecDownloader("Individual Researcher", "email@domain.com"", "sec_filings")
     downloader.download_recent_earning_report(ticker="AAPL", form_type="10-Q", max_filings=1)
